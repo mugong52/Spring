@@ -37,8 +37,11 @@
 	
 	<select id="selectProduct"  resultType="kr.co.kmarket.vo.ProductVo">
 	</select>
+	
 	<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductVo">
+		SELECT * FROM `km_product`;
 	</select>
+	
 	<update id="updateProduct">
 	</update>
 	<delete id="deleteProduct">

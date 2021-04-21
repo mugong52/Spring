@@ -16,8 +16,8 @@ public interface AdminProductDao {
 	public List<Cate1Vo> selectCate1();
 	public List<Cate2Vo> selectCate2(int code1);
 	
-	public void selectProduct();
-	public void selectProducts();
-	public void updateProduct();
-	public void deleteProduct();
+	public ProductVo selectProduct(int code);
+	public List<ProductVo> selectProducts();
+	public void updateProduct(ProductVo vo);
+	public void deleteProduct(int code);
 }

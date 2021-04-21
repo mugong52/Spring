@@ -36,52 +36,20 @@
                     <th>관리</th>
                 </tr>
 
-                <tr>
+                <tr th:each="product:${products}">
                     <td><input type="checkbox" name="상품코드"/></td>
-                    <td><img src="../img/sample_thumb.jpg" class="thumb"></td>
-                    <td>201603292</td>
-                    <td>FreeMovement BLUEFORCE</td>
-                    <td>36,000</td>
-                    <td>10</td>
-                    <td>360</td>
-                    <td>400</td>
-                    <td>홍길동</td>
-                    <td>126</td>
+                    <td><img th:src="@{/thumb/{cate1}/{cate2}/{thumb1}(cate1=${product.cate1}, cate2=${product.cate2}, thumb1=${product.thumb1})}" class="thumb"></td>
+                    <td th:text="${#numbers.formatInteger(product.code,10)}">상품코드</td>
+                    <td th:text="${product.name}">상품명</td>
+                    <td th:text="${#numbers.formatInteger(product.price,3,'COMMA')}">판매가격</td>
+                    <td th:text="${product.discount}">할인율</td>
+                    <td th:text="${product.point}">포인트</td>
+                    <td th:text="${product.stock}">재고</td>
+                    <td th:text="${product.seller}">판매자</td>
+                    <td th:text="${product.hit}">조회</td>
                     <td>
-                        <a href="#">[삭제]</a>
-                        <a href="#">[수정]</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="상품코드"/></td>
-                    <td><img src="../img/sample_thumb.jpg" class="thumb"></td>
-                    <td>201603292</td>
-                    <td>FreeMovement BLUEFORCE</td>
-                    <td>36,000</td>
-                    <td>10</td>
-                    <td>360</td>
-                    <td>400</td>
-                    <td>홍길동</td>
-                    <td>126</td>
-                    <td>
-                        <a href="#">[삭제]</a>
-                        <a href="#">[수정]</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="상품코드"/></td>
-                    <td><img src="../img/sample_thumb.jpg" class="thumb"></td>
-                    <td>201603292</td>
-                    <td>FreeMovement BLUEFORCE</td>
-                    <td>36,000</td>
-                    <td>10</td>
-                    <td>360</td>
-                    <td>400</td>
-                    <td>홍길동</td>
-                    <td>126</td>
-                    <td>
-                        <a href="#">[삭제]</a>
-                        <a href="#">[수정]</a>
+                        <a th:href="@{/admin/product/delete(code=${product.code})}">[삭제]</a>
+                        <a th:href="@{/admin/product/modify(code=${product.code})}">[수정]</a>
                     </td>
                 </tr>
                 

@@ -35,7 +35,11 @@ public class AdminProductService {
 	};
 	
 	public void selectProduct() {};
-	public void selectProducts() {};
+	
+	public List<ProductVo> selectProducts() {
+		return dao.selectProducts();
+	};
+	
 	public void updateProduct() {};
 	public void deleteProduct() {};
 	
