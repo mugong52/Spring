@@ -20,8 +20,10 @@
 			
 			if(top > 200 && !isRecommendOk){
 				// 추천상품 데이터 요청하기
+				isRecommendOk = true;
+				
 				$.get('/kmarket/getRecommendProducts', function(result){
-					isRecommendOk = true;
+					
 					recommendSection.find('img[alt=loading]').remove();
 					
 					$.each(result, function(i, data){
@@ -49,8 +51,10 @@
 				});
 			}else if(top > 700 && !isNewOk){
 				// 최신상품 데이터 요청하기
+				isNewOk = true;
+				
 				$.get('/kmarket/getNewProducts', function(result){
-					isNewOk = true;
+					
 					newSection.find('img[alt=loading]').remove();
 					
 					$.each(result, function(i, data){
@@ -78,8 +82,10 @@
 				});
 			}else if(top > 1530 && !isDiscountOk){
 				// 최신상품 데이터 요청하기
+				isDiscountOk = true;
+				
 				$.get('/kmarket/getDiscountProducts', function(result){
-					isDiscountOk = true;
+					
 					discountSection.find('img[alt=loading]').remove();
 					
 					$.each(result, function(i, data){
